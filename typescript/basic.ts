@@ -3,4 +3,4 @@ const person: { firstName: string; LastName: string; age: Number } = {
   LastName: "Doe",
   age: 30,
 };
-console.log(person);
+console.log(person.firstName);
