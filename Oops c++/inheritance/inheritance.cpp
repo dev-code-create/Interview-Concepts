@@ -7,17 +7,23 @@ class Person
 public:
   string name;
   int age;
-  // Person(string name, int age)
-  // {
-  //   this->name = name;
-  //   this->age = age;
-  // }
+  Person(string name, int age)
+  {
+    this->name = name;
+    this->age = age;
+  }
 };
 
 class Student : public Person
 {
 public:
   int rollno;
+
+  Student(string name, int age, int rollno) : Person(name, age)
+  {
+    this->rollno = rollno;
+  }
+
   void getInfo()
   {
     cout << "name : " << name << endl;
@@ -27,11 +33,7 @@ public:
 };
 int main()
 {
-  Student s1;
-  s1.name = "John";
-  s1.age = 20;
-  s1.rollno = 101;
-
+  Student s1("John", 20, 101);
   s1.getInfo();
   return 0;
 }
